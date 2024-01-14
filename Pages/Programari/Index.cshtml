@@ -1,0 +1,100 @@
+﻿@page
+@model Proiect.Pages.Programari.IndexModel
+
+@{
+    ViewData["Title"] = "Programari";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Programari</h1>
+
+<p>
+    <a asp-page="Create">Creeaza o programare</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Programari[0].Enorias)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Programari[0].Preot)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Programari[0].Serviciu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Programari[0].Biserica)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Programari[0].DataProgramare)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Programari) {
+        <tr>
+            <td>
+
+                        @if (item.Enorias != null && item.Enorias.FullName != null)
+                        {
+                            @Html.DisplayFor(modelItem => item.Enorias.FullName)
+                        }
+                       
+            </td>
+            <td> @if (item.Preot != null && item.Preot.FullName != null)
+                {
+                            @Html.DisplayFor(modelItem => item.Preot.FullName)
+                        }
+                        
+            </td>
+            <td>
+
+                        @if (item.Serviciu != null && item.Serviciu.NumeServiciu != null)
+                        {
+                            @Html.DisplayFor(modelItem => item.Serviciu.NumeServiciu)
+                        }
+                       
+            </td>
+            <td>
+                        @if (item.Biserica != null && item.Biserica.Nume != null)
+                        {
+                            @Html.DisplayFor(modelItem => item.Biserica.Nume)
+                        }
+                       
+            </td>
+            <td>
+
+                @Html.DisplayFor(modelItem => item.DataProgramare)
+            </td>
+
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+
+
+                    <div>
+                    <h1>Total de plata: @(item.Serviciu != null ? Html.DisplayFor(modelItem => item.Serviciu.PretServiciu) : null)</h1>
+
+
+                        
+                    
+                        <form method="post" asp-page-handler="CreateCheckoutSession" asp-route-amount="@item.Serviciu.PretServiciu">
+                            <button type="submit" class="btn btn-warning" style="background-color: #FFA07A; border-color: #FFA07A; color: black; margin-left: 100px">Achita programarea</button>
+                        </form>
+
+
+                    </div>
+
+
+                    
+                        
+
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

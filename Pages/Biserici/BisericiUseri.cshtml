@@ -1,0 +1,51 @@
+﻿@page
+@model Proiect.Pages.Biserici.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Lista bisericilor disponibile</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Biserica[0].Nume)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Biserica[0].Localitate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Biserica[0].Strada)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Biserica[0].Numar)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Biserica)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nume)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Localitate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Strada)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Numar)
+                </td>
+                <td>
+                    <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

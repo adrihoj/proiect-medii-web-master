@@ -1,0 +1,49 @@
+﻿@page
+@model Proiect.Pages.Biserici.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Biserica</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Biserica.Nume" class="control-label"></label>
+                <input asp-for="Biserica.Nume" class="form-control" />
+                <span asp-validation-for="Biserica.Nume" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Biserica.Localitate" class="control-label"></label>
+                <input asp-for="Biserica.Localitate" class="form-control" />
+                <span asp-validation-for="Biserica.Localitate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Biserica.Strada" class="control-label"></label>
+                <input asp-for="Biserica.Strada" class="form-control" />
+                <span asp-validation-for="Biserica.Strada" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Biserica.Numar" class="control-label"></label>
+                <input asp-for="Biserica.Numar" class="form-control" />
+                <span asp-validation-for="Biserica.Numar" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

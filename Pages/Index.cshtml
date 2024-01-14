@@ -1,0 +1,183 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+@if (User.IsInRole("User"))
+{
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@ViewData["Title"]</title>
+    </head>
+    <body>
+
+        <div class="container text-center mt-5">
+            <h1 class="display-4">Bine ati venit pe pagina noastra!</h1>
+            <p class="lead">Bucura-te de o noua experienta online, mai aproape de Dumnezeu.</p>
+
+            <div class="row mt-5">
+                <div class="col-md-6 offset-md-3">
+                    <img src="https://locuridinromania.ro/wp-content/uploads/2016/09/Biserica-Sfantul-Mihail-din-orasul-Cluj-Napoca-flickr.jpg" class="img-fluid rounded" alt="Placeholder Image">
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <p>Programeaza-te acum online si ocupa locul pentru slujba dorita.</p>
+                <p>Esti gata? Programeaza-te aici:  <a class="nav-link text-dark" asp-area="" asp-page="Programari/Index">Programari</a>.</p>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-md-4">
+                    <h2>Scopul nostru</h2>
+                    <p>Dorim sa le aratam tinerilor o noua cale catre a fi mai buni.</p>
+                </div>
+                <div class="col-md-4">
+                    <h2>Cu cine vei discuta</h2>
+                    <p>Oameni dedicati, dornici sa ii ajute pe cei la nevoie.</p>
+                </div>
+                <div class="col-md-4">
+                    <h2>Ajutor</h2>
+                    <p>Daca doresti sa ajuti si tu pe cei la nevoie, in numele Domnului <a href="/Contact">Contactaza-ne</a>.</p>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-md-6 offset-md-3">
+                    <blockquote class="blockquote">
+                        <p class="mb-0">
+                            "Fără plată aţi primit, fără plată să daţi."
+                        </p>
+                    </blockquote>
+                    <footer class="blockquote-footer">– Matei 10:8</footer>
+
+                </div>
+            </div>
+        </div>
+
+    </body>
+    </html>
+
+}
+
+@if (User.IsInRole("Admin"))
+{
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@ViewData["Title"]</title>
+    </head>
+    <body>
+
+        <div class="container text-center mt-5">
+            <h1 class="display-4">Zona destinata adminilor!</h1>
+            <p class="lead">Bucura-te de o noua experienta online, ajutandu-ti aproapele.</p>
+
+            <div class="row mt-5">
+                <div class="col-md-6 offset-md-3">
+                    <img src="https://locuridinromania.ro/wp-content/uploads/2016/09/Biserica-Sfantul-Mihail-din-orasul-Cluj-Napoca-flickr.jpg" class="img-fluid rounded" alt="Placeholder Image">
+                </div>
+            </div>
+
+            
+
+            <div class="row mt-5">
+                <div class="col-md-4">
+                    <h2>Scopul nostru</h2>
+                    <p>Dorim sa le aratam tinerilor o noua cale catre a fi mai buni.</p>
+                </div>
+                <div class="col-md-4">
+                    <h2>Cu cine vei discuta</h2>
+                    <p>Oameni dedicati, dornici sa ii ajute pe cei la nevoie.</p>
+                </div>
+                <div class="col-md-4">
+                    <h2>Ajutor</h2>
+                    <p>Daca doresti sa ajuti si tu pe cei la nevoie, in numele Domnului <a href="/Contact">Contactaza-ne</a>.</p>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-md-6 offset-md-3">
+                    <blockquote class="blockquote">
+                        <p class="mb-0">
+                            "Fără plată aţi primit, fără plată să daţi."
+                        </p>
+                    </blockquote>
+                    <footer class="blockquote-footer">– Matei 10:8</footer>
+
+                </div>
+            </div>
+        </div>
+
+    </body>
+    </html>
+
+}
+
+
+
+@if (!User.IsInRole("Admin") && !User.IsInRole("User"))
+{
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@ViewData["Title"]</title>
+    </head>
+    <body>
+
+        <div class="container text-center mt-5">
+            <h1 class="display-4">Bine ati venit pe pagina noastra!</h1>
+            <p class="lead">Bucura-te de o noua experienta online, mai aproape de Dumnezeu.</p>
+
+            <div class="row mt-5">
+                <div class="col-md-6 offset-md-3">
+                    <img src="https://locuridinromania.ro/wp-content/uploads/2016/09/Biserica-Sfantul-Mihail-din-orasul-Cluj-Napoca-flickr.jpg" class="img-fluid rounded" alt="Placeholder Image">
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <p>Programeaza-te acum online si ocupa locul pentru slujba dorita.</p>
+                <p>Esti gata? Programeaza-te aici:  <a class="nav-link text-dark" asp-area="" asp-page="Programari/Index">Programari</a>.</p>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-md-4">
+                    <h2>Scopul nostru</h2>
+                    <p>Dorim sa le aratam tinerilor o noua cale catre a fi mai buni.</p>
+                </div>
+                <div class="col-md-4">
+                    <h2>Cu cine vei discuta</h2>
+                    <p>Oameni dedicati, dornici sa ii ajute pe cei la nevoie.</p>
+                </div>
+                <div class="col-md-4">
+                    <h2>Ajutor</h2>
+                    <p>Daca doresti sa ajuti si tu pe cei la nevoie, in numele Domnului <a href="/Contact">Contactaza-ne</a>.</p>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-md-6 offset-md-3">
+                    <blockquote class="blockquote">
+                        <p class="mb-0">
+                            "Fără plată aţi primit, fără plată să daţi."
+                        </p>
+                    </blockquote>
+                    <footer class="blockquote-footer">– Matei 10:8</footer>
+
+                </div>
+            </div>
+        </div>
+
+    </body>
+    </html>
+
+
+}

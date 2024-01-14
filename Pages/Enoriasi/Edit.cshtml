@@ -1,0 +1,60 @@
+﻿@page
+@model Proiect.Pages.Enoriasi.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Enorias</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Enorias.ID" />
+            <div class="form-group">
+                <label asp-for="Enorias.Prenume" class="control-label"></label>
+                <input asp-for="Enorias.Prenume" class="form-control" />
+                <span asp-validation-for="Enorias.Prenume" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Enorias.Nume" class="control-label"></label>
+                <input asp-for="Enorias.Nume" class="form-control" />
+                <span asp-validation-for="Enorias.Nume" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Enorias.Localitate" class="control-label"></label>
+                <input asp-for="Enorias.Localitate" class="form-control" />
+                <span asp-validation-for="Enorias.Localitate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Enorias.Adresa" class="control-label"></label>
+                <input asp-for="Enorias.Adresa" class="form-control" />
+                <span asp-validation-for="Enorias.Adresa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Enorias.Email" class="control-label"></label>
+                <input asp-for="Enorias.Email" readonly class="form-control" />
+                <span asp-validation-for="Enorias.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Enorias.Telefon" class="control-label"></label>
+                <input asp-for="Enorias.Telefon" class="form-control" />
+                <span asp-validation-for="Enorias.Telefon" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
